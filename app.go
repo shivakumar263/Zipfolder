@@ -8,14 +8,14 @@ import (
 	"path/filepath"
 )
 
-
-func main(){
-	filereader,err:=zip.OpenReader("Geography.zip")
+func main() {
+	filereader, err := zip.OpenReader("Geography.zip")
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer  filereader.Close()
-	for _,file:= range filereader.Reader.File {
+
+	defer filereader.Close()
+	for _, file := range filereader.Reader.File {
 		zippedfile, err := file.Open()
 		if err != nil {
 			log.Fatal(err)
