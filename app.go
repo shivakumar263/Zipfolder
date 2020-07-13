@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	//opened the file
 	defer filereader.Close()
 	for _, file := range filereader.Reader.File {
 		zippedfile, err := file.Open()
